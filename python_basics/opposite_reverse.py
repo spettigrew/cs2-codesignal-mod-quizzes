@@ -17,4 +17,5 @@ The input string will only contain alpha characters.
 """
 
 def csOppositeReverse(txt):
+    # return the text reversed and cases swapped from upper to lower and vs. versa
     return txt[::-1].swapcase()
