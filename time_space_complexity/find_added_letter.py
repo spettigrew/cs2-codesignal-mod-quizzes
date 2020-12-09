@@ -23,10 +23,18 @@ str_1 and str_2 both consist of only lowercase alpha characters.
 """
 
 def csFindAddedLetter(str_1, str_2):
-    # set a new_str to be str1 + str2
-    new_str = sorted(str_1 + str_2)
+   # set a new_str to be str1 + str2
+    new_str1 = sorted(str_1)
+    new_str2 = sorted(str_2)     # one longer 
+    # add to sorted new string one, to match the length of string2
+    new_str1.append(" ")  
     # compare string 1 to string 2 to find the added letter
-    
-    for idx in new_str:
-       if idx.count(idx) % 2 != 0:
+    count = 0
+    # for every letter in string2, compare to letter in string 1 at the same index
+    for idx in new_str2:
+        # if they don't match, return string2 for new char
+        if idx != new_str1[count]:
            return idx
+           # incremement to next letter
+        count += 1
+      
