@@ -38,3 +38,12 @@ def csFindAddedLetter(str_1, str_2):
            # incremement to next letter
         count += 1
       
+
+# def csFindAddedLetter(str_1, str_2):  3of5 tests passed
+#     # set a new_str to be str1 + str2
+#     new_str = sorted(str_1 + str_2)
+#     # compare string 1 to string 2 to find the added letter
+    
+#     for idx in new_str:
+#        if idx.count(idx) % 2 != 0:
+#            return idx
