@@ -26,6 +26,27 @@ def csFirstUniqueChar(input_str):
             return i
     
     return -1
+
+ # --------------- Notes from after hours --------------------------------
+    # create a dict where the keys are letters and the value are number of times they appear in input
+    # go through each letter
+        # if not in dict, add letter as a key and make value =1
+        # else: add +1 to the value in the dict 
+        # Makes this runtime O(n)
+
+
+    # print(list(input_str))
+    # print(list(enumerate(input_str)))
+
+    # for i, char in enumerate(input_str):    #runtime is O(n^2)
+    #     # # check if char is unique       input string will not equal an empty string
+    #     # if char not in input_str[i+1: ] and input_str[i+1] != "":
+    #     #check if char is unique
+    #     if input_str.count(char) == 1:
+    #         return i
+    #       # the length of the loop is length string = O(n)  Count is O(n)
+    # return -1
+
         
 
 
