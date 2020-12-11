@@ -18,15 +18,29 @@ The input integer will not be negative.
 """
 
 def csReverseIntegerBits(n):
-     # reverse bits - into binary and return that integer result
+    # turn number to binary
+    binary_num = bin(n)
+    print(binary_num[2:])
+    # reverse that binary string 
+    # turn the reverse string back to an int
+    reversed_num = binary_num[2:][::-1] 
+    # creates new list. :: separators to different numbers. -1 back to front. first colon is the beginning. second         # colon is where we want to stop(end)
+    #print(reversed_num)
+    # return the int
+    return int(reversed_num, 2)
+
+
+    #  # reverse bits - into binary and return that integer result
     
-    # convert the decimal to binary and replace binary with empty string
-    binary = bin(n).replace("0b", "")
-    # make a variable and take the binary and reverse it
-    reverseBinary = binary[::-1]
+    # # convert the decimal to binary and replace binary with empty string
+    # binary = bin(n).replace("0b", "")
+    # # make a variable and take the binary and reverse it
+    # reverseBinary = binary[::-1]
     
-    # binary is base two. Return the integer from the reversed binary
-    return int (reverseBinary, 2)
+    # # binary is base two. Return the integer from the reversed binary
+    # return int (reverseBinary, 2)
+
+
     
     # # set result to 0
     # result = 0
