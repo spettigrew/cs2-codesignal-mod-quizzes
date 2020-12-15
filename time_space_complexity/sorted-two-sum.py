@@ -34,3 +34,5 @@ def csSortedTwoSum(numbers, target):
     # check for duplicate elements
         if compliment in num_dict and i != num_dict[compliment]:
             return [i, num_dict[compliment]]
+
+    # complement is the number that will add to the num to equal the target. Or target - cur_num = complement.
