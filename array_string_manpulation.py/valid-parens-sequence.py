@@ -24,7 +24,9 @@ true is the sequence is regular and false otherwise.
 """
 
 def validParenthesesSequence(s):    # all tests pass
-    #check for parens sequences
+
+# use a stack to make it efficient.
+    # initiate an empty check array - stack
     check = []
     if s == "":
         return True
@@ -32,15 +34,20 @@ def validParenthesesSequence(s):    # all tests pass
         return False
     for paren in s:
         if paren == '(':
+            #if we hit an open paren, we add it to the stack
             check.append(paren)
         else:
+            # if len has no closing brace, return false
             if len(check) == 0:
                 return False
             else:
+                # when there are open/close, we pop it out. Matches have been found
                 check.pop()
+    # if there are 'leftovers' from the matched parens, return false
     if check != []:
         return False
     return True
+               
             
  # --------- Passing all but one test 273/300 ------------->>>>>
 
