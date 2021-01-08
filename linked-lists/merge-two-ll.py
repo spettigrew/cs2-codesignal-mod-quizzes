@@ -65,8 +65,50 @@ def mergeTwoLinkedLists(l1, l2):
         end = end.next
     return merged_node.next
 
+# ----------- Alternate code from Artem - cs2 -----------------
+    # l1 and l2 are pointers to the linked list, not the actual list
+    # duplicate the linked lists before merging
+    # LL's are just nodes holding a variable. Need to return the head of the LL.
 
-# ------------- Alternative Code ----------------->>>>>
+    new_list_head = None
+    new_list_tail = None
+
+    # traverse these lists, until they are both None
+    # each time we move either l1 or l2 forward:
+    # we duplicate that node, and add to the end of new_list
+
+    while l1 is not None or l2 is not None:
+        # first: figure out which node we are adding
+        new_node = None
+        # compare values at l1 and l2
+        if not l1:
+            # if l1 does not exist, use l2 value
+            new_node = ListNode(l2.value)
+            l2 = l2.next
+        elif not l2:
+            new_node = ListNode(l1.value)
+            l1 = l1.next
+        elif l1.value <= l2.value:
+            new_node = ListNode(l1.value)
+            l1 = l1.next
+        else:
+            new_node = ListNode(l2.value)
+            l2 = l2.next
+
+        # Actually add the node to the end of the list
+        # handle the case when the new_list is empty
+        if new_list_head is None:
+            new_list_head = new_node
+        else:
+            # add a new node to the existing linked list
+            new_list_tail.next = new_node
+            new_list_tail = new_node
+
+
+    return new_list_head
+
+
+# ------------- Alternative Code from CS part one-------- -->>>>>
 # iterate through the linked list
     # make an output list and add to that
     # if l1 is None and l2 is None:
